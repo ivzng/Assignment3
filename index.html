@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ivy's Portfolio</title>
+  <!-- Google Fonts: Using Oswald, Montserrat, and Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" 
+    rel="stylesheet">
+  <style>
+    /* Custom Oswald Class for h1 */
+    .oswald-bold {
+      font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      color: #75012b; 
+    }
+
+    /* Global Styles */
+    body {
+      background-color: #ffffff;
+      margin: 0;
+      font-family: 'Lora', serif;
+      color: #333;
+      line-height: 2.5;
+      font-size: 18px;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #FCF2F5;
+      padding: 0px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 64px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #FCE4EC;
+      width: 100%;
+      padding: 1px 0;
+      margin-top: 10px;
+      border: 2px solid #F8C8DC;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      transition: background-color 0.3s ease;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    a:link { 
+      color: #333; 
+    }
+    a:visited { 
+      color: #555; 
+    }
+    a:hover { 
+      color: #888; 
+    }
+    a:active { 
+      color: #000; 
+    }
+    nav a:visited {
+      color: #555;
+    }
+    nav a:hover {
+      background-color: #F8C8DC;
+      color: #fff;
+    }
+    nav a:active {
+      color: #000;
+    }
+
+    /* Headings */
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 38px;
+      margin: 0;
+      color: #75012b;
+    }
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      margin: 0;
+      font-weight: 600;
+      font-style: italic;
+      color: #dc92ac;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Section */
+    .section {
+      padding: 40px 0;
+      overflow: auto;
+    }
+
+    /* Divider */
+    .divider {
+      width: 90%;
+      height: 2px;
+      background-color: #F8C8DC;
+      margin: 30px auto;
+    }
+
+    /* About Me Layout */
+    .about-content {
+      display: flex;
+      align-items: flex-start; /* Align content to the top */
+    }
+    .about-text {
+      flex: 1;
+      padding-left: 20px;
+    }
+    .about-image {
+      /* No left margin needed as image comes first */
+    }
+
+    /* Table - Updated using Chloe's syntax */
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+      text-align: left;
+    }
+    table th {
+      padding: 10px;
+      background-color: #FCF2F5;
+      color: #333;
+      border: 1px solid #d81b60;
+    }
+    table td {
+      padding: 10px;
+      border: 1px solid #d81b60;
+    }
+
+    /* Project Section */
+    .project-section {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* Image Containers */
+    .img-container {
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      text-align: center;
+    }
+    .img-label {
+      font-size: 0.8em;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .vertical-scroll {
+      display: flex;
+      flex-direction: column;
+      max-height: 750px;
+      overflow-y: auto;
+    }
+    .vertical-scroll .img-container {
+      margin: 10px auto;
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .horizontal-scroll .img-container {
+      margin: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #FCF2F5;
+      text-align: center;
+      padding: 40px;
+      clear: both;
+    }
+    footer h2 {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
+    }
+    #about h2 {
+      margin: 0;
+    }
+
+    /* Resume Button */
+    .resume-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #B2DFDB;
+      color: #333;
+      border: 2px solid #B2DFDB;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .resume-button:hover {
+      background-color: #F8C8DC;
+      color: #fff;
+      border-color: #F8C8DC;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Updated h1 using Oswald font -->
+    <h1 class="oswald-bold">IVY ZHANG</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#table">Experience</a>
+      <a href="#work">My Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="Headshot.jpg" alt="Headshot of Ivy Zhang" width="400" height="479">
+      </div>
+      <div class="about-text">
+        <h2>Hey!</h2>
+        <p>
+          Welcome to my portfolio! I'm a Global Business and Digital Arts student passionate about creative growth and exploration. While I'm still discovering my niche, I’m drawn to photography, video editing, and UX/UI design. This portfolio showcases my evolving approach to design and storytelling, shaped by curiosity, challenges, and inspiration along the way.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Divider -->
+  <div class="divider"></div>
+
+  <section id="work" class="section">
+    <div class="container">
+      <h2>MY WORK</h2>
+      <h3>GBDA 201 Photography Project</h3>
+      <p>
+        The first assignment for this class was a photography project, which I thoroughly enjoyed! My passion for photography made the process fun and exciting, and I was really satisfied with how the shots turned out. I’d love to take on more projects like this in the future.
+      </p>
+      <div class="project-section">
+        <div class="vertical-scroll">
+          <div class="img-container">
+            <img src="Product.jpg" alt="Product Photo" width="450" height="600">
+            <p class="img-label">Product shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Narrative.jpg" alt="Narrative Photo" width="640" height="427">
+            <p class="img-label">Narrative shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Fashion.jpg" alt="Fashion Project Photo" width="450" height="600">
+            <p class="img-label">Fashion shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Action.jpg" alt="Action Shot" width="450" height="600">
+            <p class="img-label">Action shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Long Exposure.jpg" alt="Long Exposure Photo" width="640" height="427">
+            <p class="img-label">Long Exposure shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Macro.jpg" alt="Macro Shot" width="450" height="600">
+            <p class="img-label">Macro shot</p>
+          </div>
+          <div class="img-container">
+            <img src="Wildlife.jpg" alt="Wildlife Photo" width="640" height="427">
+            <p class="img-label">Wildlife shot</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>GBDA 202: Re-Brand It! – First Aid Beauty</h3>
+      <p>
+        For this branding project, I reimagined the skincare company First Aid Beauty, aiming to simplify its loud and chaotic visual identity while preserving key brand elements. I began by developing a strategic foundation through competitive analysis and a refreshed mission statement. From there, I created a modern visual identity that focuses on clean, typography-based branding—an intentional choice inspired by trends in the skincare industry. Rather than relying on an icon logo, I used refined type treatments to convey trust, clarity, and care, aligning with the brand’s core values while giving it a more cohesive and elevated look.
+      </p>
+      <div class="project-section">
+        <div class="horizontal-scroll">
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-1.jpeg" alt="Rebranding Pitch 1" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-3.jpeg" alt="Rebranding Pitch 3" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-5.jpeg" alt="Rebranding Pitch 5" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-6.jpeg" alt="Rebranding Pitch 6" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-7.jpeg" alt="Rebranding Pitch 7" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-8.jpeg" alt="Rebranding Pitch 8" width="640" height="360">
+          </div>
+          <div class="img-container">
+            <img src="GBDA 202 Project 2 Rebranding Pitch-9.jpeg" alt="Rebranding Pitch 9" width="640" height="360">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider"></div>
+
+  <section id="table" class="section">
+    <div class="container">
+      <h2>RECENT EMPLOYMENT</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Company</th>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td>Now Tea</td>
+        </tr>
+        <tr>
+          <td>2022 - 2023</td>
+          <td>Kiokii and...</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  
+  <!-- Footer now serves as the Contact section -->
+  <footer id="contact">
+    <div class="container">
+      <h2>CONTACT ME</h2>
+      <p>
+        Feel free to reach out via email:
+        <a href="mailto:i36zhang@uwaterloo.ca">i36zhang@uwaterloo.ca</a>
+        <img src="outlook.png" alt="Outlook Icon" style="vertical-align: middle; margin-left: 10px;" width="24" height="24">
+      </p>
+      <p>
+        Or connect on LinkedIn:
+        <a href="https://www.linkedin.com/in/ivy-zhang-610b77285" target="_blank">linkedin.com</a>
+        <img src="linkedin.png" alt="LinkedIn Icon" style="vertical-align: middle; margin-left: 10px;" width="24" height="24">
+      </p>
+      <a href="https://drive.google.com/file/d/1SaAXPaPjOFIoDQBEz-slv3ZobkyO5LyH/view?usp=drive_link" class="resume-button" target="_blank">
+        View My Resume
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
